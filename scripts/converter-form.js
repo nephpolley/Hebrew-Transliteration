@@ -100,7 +100,7 @@ if (typeof ConverterForm !== 'object') {
           // If it does, see how many pronunciations there are (TextToIPA knows this, and sends all pronunciations regardless)
           } else if (IPAWord.error === 'multi') {
 
-              currentErrorMessage = ConverterForm._multiMsg;
+              currentErrorMessage = ""; //ConverterForm._multiMsg;
               IPAText.push(IPAWord.text);
 
           // Otherwise just push the converted word
@@ -116,7 +116,13 @@ if (typeof ConverterForm !== 'object') {
 
         // For word in the IPAText
         let HebrewText = IPAText.map((word) => {
+          if (word.includes("OR")) {
+            // Just get the first pronunciation for simplicity
+            word = word.split(' ')[0]
+          }
+
           console.log("Current word: " + word);
+          
           // For char in the word
           return word.split('').map((char, i) => {
                 console.log("Current char: " + char);
