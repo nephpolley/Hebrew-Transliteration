@@ -92,7 +92,7 @@ if (typeof ConverterForm !== 'object') {
         // Begin converting
         for (var i in englishTextArray) {
           // Get punctuation/capitalization
-          var capitalized = /^[A-Z]/.test(englishTextArray[i]);
+          // var capitalized = /^[A-Z]/.test(englishTextArray[i]);
           var end = englishTextArray[i].slice(-1);
           end = /[,!?@"'[\]#$%^&*()\.]/.test(end) ? end : "";
           var start = englishTextArray[i][0];
@@ -104,9 +104,10 @@ if (typeof ConverterForm !== 'object') {
           // Re-insert punctuation/capitalization
           IPAWord.text = IPAWord.text.concat(end);
           IPAWord.text = start.concat(IPAWord.text);
-          if (capitalized) {
-            IPAWord.text = IPAWord.text.charAt(0).toUpperCase() + IPAWord.text.slice(1);
-          }
+          
+          // if (capitalized) {
+          //   IPAWord.text = IPAWord.text.charAt(0).toUpperCase() + IPAWord.text.slice(1);
+          // }
           // Does the word exist?
           if (typeof IPAWord.error === 'undefined') {
 
