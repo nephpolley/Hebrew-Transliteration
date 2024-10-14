@@ -4,30 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Document</title>
+        <title>Transliterate English to Hebrew</title>
 
         <!-- Stylesheets -->
          <link rel="stylesheet" href="./css/normalize.css">
+         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
 
         <div id="js-text-to-ipa-form">
 
             <ul style="list-style-type: none;">
-              <li><textarea id="ipa-in" placeholder="Write text here!" rows="4" cols="50"></textarea></li>
-              <li class="button"><button type="button" id="js-ipa-submit" onClick="ConverterForm.convert('ipa-in', 'ipa-out', 'ipa-err')">Convert!</button></li>
-              <li><textarea readonly id="ipa-out" placeholder="!ותפּת גוז חר" rows="4" cols="50"></textarea></li>
+                <li><h1>Transliterate English to Hebrew</h1></li>
+                <li><textarea id="ipa-in" placeholder="Write text here!" rows="4" cols="50"></textarea></li>
+                <li class="button"><button type="button" id="js-ipa-submit" onClick="ConverterForm.convert('ipa-in', 'ipa-out', 'ipa-err')">Convert!</button></li>
+                <li><textarea readonly id="ipa-out" placeholder="!ותפּת גוז חר" rows="4" cols="50"></textarea></li>
             </ul>
-          
-            <ul style="list-style-type: none;">
-              <li><noscript><p>This converter will not work unless Javascript is enabled.</p></noscript></li>
-              <li>
-                <div id="ipa-err">
-                  <!-- <p>Errors will go here if you make any. (This will be overwritten!)</p> -->
-                </div>
-              </li>
-            </ul>
-          </div>
         
 
         <script src="./scripts/text-to-ipa.js"></script>

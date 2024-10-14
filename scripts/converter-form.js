@@ -112,14 +112,15 @@ if (typeof ConverterForm !== 'object') {
           if (typeof IPAWord.error === 'undefined') {
 
             // No, so set the error message
-            // currentErrorMessage = ConverterForm._undefMsg;
+            currentErrorMessage = ConverterForm._undefMsg;
+
             // Push plain text instead of IPA
             IPAText.push(englishTextArray[i]);
 
           // If it does, see how many pronunciations there are (TextToIPA knows this, and sends all pronunciations regardless)
           } else if (IPAWord.error === 'multi') {
 
-            // currentErrorMessage = ConverterForm._multiMsg;
+            currentErrorMessage = ConverterForm._multiMsg;
             IPAText.push(IPAWord.text);
 
           // Otherwise just push the converted word
@@ -181,7 +182,8 @@ if (typeof ConverterForm !== 'object') {
 
         // Make sure the error exists before outputting errors
         if (typeof errID === 'string') {
-          ConverterForm._updateParagraph(errID, currentErrorMessage + ' ' + currentMultiMessage);
+          // ConverterForm._updateParagraph(errID, currentErrorMessage + ' ' + currentMultiMessage);
+          console.log(currentErrorMessage);
         } else {
           console.log('TextToIPA Warning: "errID" in "ConverterForm.convert()" is not a string, skipping error output.');
         }
